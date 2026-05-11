@@ -13,6 +13,7 @@ Structured extraction example:
 Edge case output:
 <img width="964" height="59" alt="image" src="https://github.com/user-attachments/assets/3aa0610b-8ef5-47f9-ad12-f0d5df6c2712" />
 ## Failure Case: 
+The system should have extracted language, urgency, and eligibility concerns. Instead, it only returned location and a generic food type. This matters because non-English users may receive incomplete or misleading recommendations, limiting their ability to access timely food assistance. 
 One identified failure case involved a Spanish-language request:
 “Necesito ayuda alimentaria en San Jose.”
 The system partially succeeded by identifying the location (“San Jose”) and recognizing food-related terms. However, the output only returned:
@@ -21,3 +22,4 @@ This demonstrated that the English-centric parser could not fully capture the us
 ## Oversight and Tradeoff: 
 Human oversight is necessary when reviewing extracted information, validating updated program data, and handling ambiguous or multilingual requests. Staff members or community organizations would verify flagged results and ensure recommendations remain accurate and culturally appropriate.
 Improving multilingual support would significantly increase accessibility, but it comes with tradeoffs. Expanding language coverage requires more advanced AI models, larger datasets, and continuous monitoring, increasing development costs and system complexity. While automation improves speed and scalability, maintaining accuracy still depends on periodic human review.
+One improvement would be adding a multilingual translation or multilingual parsing layer before structured extraction. This would improve access for Spanish-speaking users, but it would increase cost, latency, and the need for human review.
